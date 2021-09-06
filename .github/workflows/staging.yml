@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # get environment
-    environment: staging
+    environment: production
 
     env:
       key1: ${{secrets.MY_NAME}}
