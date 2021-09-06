@@ -25,7 +25,7 @@ jobs:
 
     steps:
         - uses: actions/checkout@v2
-        - run: echo $key1
+        - run: echo lets check $key1
           if: ${{env.key1}} == 'Si Ganteng'
         - run: echo 'Si Ganteng'
           if: ${{env.key1}} == 'Ekky Patria'
