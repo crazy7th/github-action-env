@@ -27,4 +27,4 @@ jobs:
         - uses: actions/checkout@v2
         - run: echo $key1
           if: ${{env.key1}} == 'Si Ganteng'
-          run: echo 'Si Ganteng'
+        - run: echo 'Si Ganteng'
