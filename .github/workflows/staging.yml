@@ -28,3 +28,5 @@ jobs:
         - run: echo $key1
           if: ${{env.key1}} == 'Si Ganteng'
         - run: echo 'Si Ganteng'
+          if: ${{env.key1}} == 'Ekky Patria'
+        - run: echo 'Ekky Patria'
