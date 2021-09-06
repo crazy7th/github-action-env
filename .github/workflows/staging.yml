@@ -7,26 +7,23 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # get environment
-    environment: production
+    environment: staging
 
     env:
-      key1: ${{secrets.MY_NAME}}
+      name: ${{secrets.MY_NAME}}
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@v2
-        # - run: echo lets check $key1
-        #   if: ${{env.key1}} == 'Si Ganteng'
-        # - run: echo 'Si Ganteng'
-          if: ${{env.key1}} == 'Ekky Patria'
-        - run: echo 'Ekky Patria'
+      - name: Get Repo metadata
+        uses: actions/checkout@v2
+        
+        if: ${{env.name}} == 'patria'
+      - run: echo 'Staging running correctly'
