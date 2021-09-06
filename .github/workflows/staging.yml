@@ -19,18 +19,22 @@ jobs:
   build:
     # get environment
     environment: staging
-    env:
-        MY_NAME: ${{secrets.MY_NAME}}
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    if: ${{env.MY_NAME}} == 'Si Ganteng'
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+      env:
+        MY_NAME: ${{secrets.MY_NAME}}
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - run: echo Checkout
+
+
+      if: ${{env.MY_NAME}} == 'Si Ganteng'
 
       # Runs a single command using the runners shell
       - name: Run and write secret
