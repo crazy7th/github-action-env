@@ -6,9 +6,9 @@ name: CI/CD for Staging
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,10 +18,12 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # get environment
-    environment: staging 
+    environment: staging
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    if: ${{ secrets.MY_NAME }} == 'Si Ganteng'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,4 +32,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run and write secret
-        run: echo Hi, ${{ secrets.MY_NAME }}
+        run: echo Hi, Staging
