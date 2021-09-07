@@ -25,5 +25,5 @@ jobs:
       - name: Get Repo metadata
         uses: actions/checkout@v2
         
-        if: ${{env.name}} == 'patria'
+        if: ${{env.name}} == 'kencana'
       - run: echo 'Staging running correctly'
